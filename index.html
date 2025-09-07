@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ishan Diwantha Wijesekara — Personal Website</title>
+  <meta name="description" content="Personal website / portfolio for Ishan Diwantha Wijesekara." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #0f1724;
+      --card: #0b1220;
+      --muted: #94a3b8;
+      --accent: #7c5cff;
+      --glass: rgba(255,255,255,0.04);
+      --radius: 14px;
+      color-scheme: dark;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(124,92,255,0.08), transparent 8%),
+                  linear-gradient(180deg, #08101a 0%, #071423 100%),
+                  var(--bg);
+      color:#e6eef8;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+      padding:40px 20px;
+    }
+    .container{max-width:1000px;margin:0 auto}
+
+    header{
+      display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));backdrop-filter: blur(6px);margin-bottom:28px
+    }
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#3ab7ff);display:grid;place-items:center;font-weight:700}
+    .brand h1{margin:0;font-size:16px}
+    .brand p{margin:0;font-size:12px;color:var(--muted)}
+
+    nav a{color:var(--muted);text-decoration:none;margin-left:14px;font-size:14px}
+    nav a.button{background:var(--accent);color:#081026;padding:8px 12px;border-radius:10px;font-weight:600}
+
+    .hero{display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:center}
+    .intro{padding:20px;border-radius:var(--radius);background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));box-shadow:0 6px 30px rgba(2,6,23,0.6)}
+    .intro h2{margin:0 0 8px 0;font-size:28px}
+    .intro p.lead{margin:0 0 16px 0;color:var(--muted)}
+    .cta-row{display:flex;gap:12px}
+    .btn{padding:10px 14px;border-radius:10px;background:transparent;border:1px solid rgba(255,255,255,0.06);cursor:pointer;color:inherit}
+    .btn.primary{background:linear-gradient(90deg,var(--accent),#3ab7ff);border:none;color:#041025;font-weight:700}
+
+    .card{border-radius:14px;padding:18px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));box-shadow:0 6px 30px rgba(2,6,23,0.6)}
+
+    /* Profile card */
+    .profile{display:flex;flex-direction:column;gap:12px;align-items:center;text-align:center;padding:28px}
+    .avatar{width:160px;height:160px;border-radius:18px;overflow:hidden;display:grid;place-items:center;background:linear-gradient(135deg,#1f2937, #111827)}
+    .avatar img{width:100%;height:100%;object-fit:cover}
+    .socials{display:flex;gap:10px}
+    .pill{padding:6px 10px;border-radius:999px;background:var(--glass);font-size:13px;color:var(--muted)}
+
+    /* Sections */
+    section{margin-top:22px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    ul.skills{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:8px}
+    ul.skills li{background:rgba(255,255,255,0.03);padding:8px 10px;border-radius:10px;font-size:13px;color:var(--muted)}
+
+    .projects .project{display:flex;flex-direction:column;gap:8px;padding:12px;border-radius:10px}
+    .project h4{margin:0}
+    .meta{font-size:13px;color:var(--muted)}
+
+    footer{margin-top:36px;text-align:center;color:var(--muted);font-size:13px}
+
+    /* Responsive */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr;}
+      .grid-3{grid-template-columns:repeat(2,1fr)}
+      .avatar{width:120px;height:120px}
+    }
+    @media (max-width:520px){
+      .grid-3{grid-template-columns:1fr}
+      header{flex-direction:column;align-items:flex-start;gap:12px}
+    }
+
+    /* small interactive touches */
+    a.inline{color:inherit;text-decoration:none;border-bottom:1px dashed rgba(255,255,255,0.04)}
+    .muted{color:var(--muted)}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">ID</div>
+        <div>
+          <h1>Ishan Diwantha Wijesekara</h1>
+          <p class="muted">Programmer • Student</p>
+        </div>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact" class="button">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="intro card">
+          <h2>Hi — I'm <span style="background:linear-gradient(90deg,var(--accent),#3ab7ff);-webkit-background-clip:text;background-clip:text;color:transparent;">Ishan Diwantha</span></h2>
+          <p class="lead">I am a student. Education is not just about books and exams; it is also about building character, discipline, and responsibility. I enjoy learning new skills and preparing for the future.</p>
+          <div class="cta-row">
+            <button class="btn primary" onclick="location.href='#contact'">Hire me</button>
+            <button class="btn" onclick="document.getElementById('resume').scrollIntoView({behavior:'smooth'})">Download CV</button>
+          </div>
+
+          <div style="margin-top:16px;display:flex;gap:12px;align-items:center">
+            <div class="pill">📍 Colombo, Sri Lanka</div>
+            <div class="pill">🎓 Student</div>
+          </div>
+
+        </div>
+
+        <aside class="card profile">
+          <div class="avatar">
+            <!-- Generated avatar based on your name; replace with your own photo URL if you want -->
+            <img src="https://ui-avatars.com/api/?name=Ishan+Diwantha+Wijesekara&background=7c5cff&color=ffffff&size=512" alt="Ishan Diwantha">
+          </div>
+          <div>
+            <h3 style="margin:6px 0 2px 0">Ishan Diwantha Wijesekara</h3>
+            <p class="muted" style="margin:0">Programmer</p>
+          </div>
+          <div class="socials">
+            <a class="pill" href="#">GitHub</a>
+            <a class="pill" href="#">LinkedIn</a>
+            <a class="pill" href="#">Twitter</a>
+          </div>
+        </aside>
+      </section>
+
+      <section id="about">
+        <div class="card">
+          <h3>About me</h3>
+          <p class="muted">I am a student, and being a student is one of the most important stages of life. A student’s duty is to gain knowledge, learn new skills, and prepare for the future. Education is not just about books and exams; it is also about building character, discipline, and responsibility.
+
+As a student, I spend most of my time learning different subjects, completing homework, and preparing for tests. Teachers guide me, but I also know that I have to put in my own effort. I believe that hard work and dedication are the keys to success.
+
+Apart from studies, I also take part in sports, cultural activities, and other events in school. These activities help me stay active, creative, and confident. They teach me teamwork, leadership, and how to face challenges.
+
+Sometimes being a student can be stressful, especially during exams. But I know that these challenges help me grow stronger. My parents, teachers, and friends always encourage me to do my best.
+
+In conclusion, I am proud to be a student. This stage of life gives me the opportunity to learn, dream, and prepare for a bright future. I know that the lessons I learn today will shape the person I become tomorrow.</p>
+
+          <div style="margin-top:12px">
+            <h4 style="margin:6px 0">Skills</h4>
+            <ul class="skills">
+              <li>Python</li>
+              <li>Java</li>
+              <li>C</li>
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+              <li>Git</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="projects">
+        <h3 style="margin-top:12px">Selected Projects</h3>
+        <div class="grid-3">
+          <div class="project card">
+            <h4>Study Planner</h4>
+            <p class="meta muted">A simple web app to plan study sessions, set reminders, and track progress.</p>
+            <p class="muted" style="margin:0">Tech: HTML • CSS • JavaScript</p>
+            <div style="margin-top:8px"><a class="inline" href="#">View project →</a></div>
+          </div>
+          <div class="project card">
+            <h4>Calculator App</h4>
+            <p class="meta muted">A desktop/mobile calculator built to practice logic and UI design.</p>
+            <p class="muted" style="margin:0">Tech: Python • Tkinter / Java</p>
+            <div style="margin-top:8px"><a class="inline" href="#">View project →</a></div>
+          </div>
+          <div class="project card">
+            <h4>School Website</h4>
+            <p class="meta muted">A demo website for a school with event announcements and contact form.</p>
+            <p class="muted" style="margin:0">Tech: HTML • CSS • Bootstrap</p>
+            <div style="margin-top:8px"><a class="inline" href="#">View project →</a></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="resume">
+        <div id="resume" class="card" style="margin-top:16px">
+          <h3>Resume</h3>
+          <p class="muted">A short resume summary — replace this with your actual CV or a link to a PDF.</p>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="card" style="margin-top:16px;padding-bottom:20px">
+          <h3>Contact</h3>
+          <p class="muted">Want to collaborate or ask a question? Send a message — I'll reply as soon as I can.</p>
+
+          <form onsubmit="event.preventDefault(); handleContact();" style="margin-top:12px;display:flex;flex-direction:column;gap:10px;max-width:560px">
+            <input id="name" placeholder="Your name" style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit">
+            <input id="email" placeholder="Email" style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit">
+            <textarea id="message" rows="5" placeholder="Tell me about your project" style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit"></textarea>
+            <div style="display:flex;gap:10px">
+              <button class="btn primary" type="submit">Send message</button>
+              <button class="btn" type="button" onclick="location.href='mailto:ishan.dw@example.com'">Email me</button>
+            </div>
+          </form>
+
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <p>Made with ❤️ • <span class="muted">Ishan Diwantha Wijesekara • © <span id="year"></span></span></p>
+    </footer>
+  </div>
+
+  <script>
+    // set year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function handleContact(){
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      if(!name || !email || !message){
+        alert('Please fill all fields.');
+        return;
+      }
+      // fallback contact behavior — opens mail client with prefilled content
+      const subject = encodeURIComponent('New message from ' + name);
+      const body = encodeURIComponent('Name: '+name+"
+Email: "+email+"
+
+"+message);
+      window.location.href = `mailto:ishan.dw@example.com?subject=${subject}&body=${body}`;
+    }
+  </script>
+</body>
+</html>
